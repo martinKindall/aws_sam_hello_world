@@ -1,0 +1,16 @@
+# SAM File
+AWSTemplateFormatVersion: '2010-09-09'
+# la siguiente linea Transform es lo que indica que esto es un SAM template y no un CF template
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A starter AWS Lambda function.
+Resources:
+  helloworldpython3:
+    # SAM specific type of resource
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      CodeUri: src/
+      Description: A starter AWS Lambda function.
+      MemorySize: 128
+      Timeout: 3
