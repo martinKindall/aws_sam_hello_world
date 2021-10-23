@@ -7,7 +7,13 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: python3.8
-      CodeUri: s3://codigo-morsa-sam/3879942964cd174c7f600f7c85592308
+      CodeUri: s3://codigo-morsa-sam/f2fc27ad7cafe9ddda930d5e3e600bac
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
+      Events:
+        HelloWorldSAMApi:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
